@@ -12,6 +12,8 @@
 		4B188AA11D7229190038809E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B188A9F1D7229190038809E /* Main.storyboard */; };
 		4B188AA31D7229190038809E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B188AA21D7229190038809E /* Assets.xcassets */; };
 		4B188AA61D7229190038809E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B188AA41D7229190038809E /* LaunchScreen.storyboard */; };
+		4B188AB31D72377B0038809E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AB21D72377B0038809E /* Event.swift */; };
+		DCC84E0D0B07F23E2877C428 /* Pods_DownToStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		4B188AA21D7229190038809E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B188AA51D7229190038809E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B188AA71D7229190038809E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B188AB21D72377B0038809E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownToStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC84E0D0B07F23E2877C428 /* Pods_DownToStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0522229846CE3FFE3FE0F2A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */,
+				C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4B188A8F1D7229190038809E = {
 			isa = PBXGroup;
 			children = (
 				4B188A9A1D7229190038809E /* DownToStudy */,
 				4B188A991D7229190038809E /* Products */,
+				0522229846CE3FFE3FE0F2A6 /* Pods */,
+				EA1586CFB29A39E359C1A589 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +72,71 @@
 		4B188A9A1D7229190038809E /* DownToStudy */ = {
 			isa = PBXGroup;
 			children = (
+				4B188AB41D723A2E0038809E /* Networking */,
+				4B188AAD1D7237070038809E /* Models */,
+				4B188AAE1D72370C0038809E /* UI */,
 				4B188A9B1D7229190038809E /* AppDelegate.swift */,
-				4B188A9D1D7229190038809E /* ViewController.swift */,
 				4B188A9F1D7229190038809E /* Main.storyboard */,
 				4B188AA21D7229190038809E /* Assets.xcassets */,
 				4B188AA41D7229190038809E /* LaunchScreen.storyboard */,
 				4B188AA71D7229190038809E /* Info.plist */,
 			);
 			path = DownToStudy;
+			sourceTree = "<group>";
+		};
+		4B188AAD1D7237070038809E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B188AB21D72377B0038809E /* Event.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4B188AAE1D72370C0038809E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4B188AB11D7237300038809E /* Custom */,
+				4B188AB01D7237270038809E /* Cells */,
+				4B188AAF1D7237190038809E /* ViewControllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		4B188AAF1D7237190038809E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B188A9D1D7229190038809E /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B188AB01D7237270038809E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4B188AB11D7237300038809E /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		4B188AB41D723A2E0038809E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		EA1586CFB29A39E359C1A589 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B188AAA1D7229190038809E /* Build configuration list for PBXNativeTarget "DownToStudy" */;
 			buildPhases = (
+				036F6DAF44B7190FCD4FDF57 /* [CP] Check Pods Manifest.lock */,
 				4B188A941D7229190038809E /* Sources */,
 				4B188A951D7229190038809E /* Frameworks */,
 				4B188A961D7229190038809E /* Resources */,
+				8D829AE1B79299724277D85B /* [CP] Embed Pods Frameworks */,
+				3EC00A2258F949118A5139F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,12 +208,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		036F6DAF44B7190FCD4FDF57 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3EC00A2258F949118A5139F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D829AE1B79299724277D85B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B188A941D7229190038809E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4B188A9E1D7229190038809E /* ViewController.swift in Sources */,
+				4B188AB31D72377B0038809E /* Event.swift in Sources */,
 				4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +374,7 @@
 		};
 		4B188AAB1D7229190038809E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DownToStudy/Info.plist;
@@ -258,6 +386,7 @@
 		};
 		4B188AAC1D7229190038809E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DownToStudy/Info.plist;
@@ -286,6 +415,7 @@
 				4B188AAC1D7229190038809E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
