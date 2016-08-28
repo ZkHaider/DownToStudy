@@ -9,5 +9,6 @@ target 'DownToStudy' do
   pod 'Moya'
   pod 'SwiftyJSON'
   pod 'Moya-ObjectMapper'
+  pod ‘Pulsator’
 
 end
