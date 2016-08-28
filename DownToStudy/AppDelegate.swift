@@ -8,6 +8,8 @@
 
 import UIKit
 
+let director = Director()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

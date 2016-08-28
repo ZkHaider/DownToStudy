@@ -26,10 +26,16 @@ class ViewController : UIViewController, LoginViewControllerDelegate {
     var viewControllers = [UIViewController]()
     var loginViewController: LoginViewController?
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var tabBar: UITabBar!
+    @IBOutlet var bottomTabBarConstraint: NSLayoutConstraint!
     var didLayoutInitialViewControllers = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBar.barTintColor = UIColor.clearColor()
+        tabBar.backgroundImage = UIImage.init()
+        tabBar.shadowImage = UIImage.init()
         
         // Load view controllers
         if let vc = storyboard?.instantiateViewControllerWithIdentifier("eventListViewController") as? EventListViewController {
@@ -42,8 +48,11 @@ class ViewController : UIViewController, LoginViewControllerDelegate {
             viewControllers.append(vc)
         }
         
-        // Check for authentication, show login if not authenticated
-        if (!debugging) {
+        // Check for authentication
+        let isAuthenticated = director.isUserAuthenticated()
+        if (!isAuthenticated) {
+            
+            // Show login if not authenticated
             if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
                 loginViewController = lg
                 lg.delegate = self
@@ -51,7 +60,16 @@ class ViewController : UIViewController, LoginViewControllerDelegate {
                 addChildViewController(lg)
                 view.addSubview((lg.view)!)
             }
+            
+            // Hide the tab bar
+            bottomTabBarConstraint.constant = -(tabBar.bounds.size.height + 10.0) // 10px more cuz the radar icon goes out of bounds
+            view.layoutIfNeeded()
+            
         }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     override func viewDidLayoutSubviews() {
@@ -101,6 +119,12 @@ class ViewController : UIViewController, LoginViewControllerDelegate {
         login.willMoveToParentViewController(nil)
         login.view.removeFromSuperview()
         login.removeFromParentViewController()
+        
+        // Show tab bar
+        bottomTabBarConstraint.constant = 0.0
+        UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
         
         // Reload all controllers
         for vc in viewControllers {

@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_group_big" translatesAutoresizingMaskIntoConstraints="NO" id="tpq-xm-sTo">
+                                <rect key="frame" x="174" y="237" width="253" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="8hB-3Q-Cm5"/>
+                                    <constraint firstAttribute="width" constant="253" id="CLf-lx-K58"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96766644716262817" green="0.070534534752368927" blue="0.30286473035812378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tpq-xm-sTo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9rl-jf-g7j"/>
+                            <constraint firstItem="tpq-xm-sTo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kxE-J2-TrZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +37,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_group_big" width="379" height="188"/>
+    </resources>
 </document>
