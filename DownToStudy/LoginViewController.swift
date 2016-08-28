@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var topLabel: UILabel!
     
+    weak var delegate: Routes?
+    
     override func viewDidLoad() {
         
     }
@@ -27,4 +29,11 @@ class LoginViewController: UIViewController {
         UIApplication.sharedApplication().openURL(NSURL (string: "srauth://authorize?client_id=4")!)
     }
 
+}
+
+extension LoginViewController : Routes {
+    func processLogin(token: String, uid: String) {
+        UserDefaultsManager.setString("token", value: token)
+        UserDefaultsManager.setString("uid", value: uid)
+    }
 }

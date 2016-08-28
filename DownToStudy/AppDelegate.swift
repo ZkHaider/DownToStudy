@@ -43,19 +43,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // For deep linking and single sign on 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
 
+        // Get query items
         let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
         let queryItems = components?.queryItems
-        print(queryItems![0])
-        print(queryItems![1])
         
-        if (url.scheme == "sr4") {
-            
-            // Go ahead and check the params 
-            if (url.parameterString != nil) {
-                
-                // Go ahead and parse it out 
-            }
+        // Get keys and values
+        let tokenValue = queryItems![0].value
+        let uidValue = queryItems![1].value
+    
+        // Go ahead and launch the next view controller for showing the main view
+        if let rootViewController = window?.rootViewController as? ViewController {
+            rootViewController.processLogin(tokenValue!, uid: uidValue!)
         }
+        
         return true
     }
 

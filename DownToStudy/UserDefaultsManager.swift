@@ -159,7 +159,7 @@ class UserDefaultsManager {
     // MARK: - Synchronize
     //-------------------------------------------------------------------------------------------
     
-    class func Sync() {
+    class func sync() {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     

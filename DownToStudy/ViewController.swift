@@ -9,18 +9,22 @@
 import UIKit
 import Moya
 
-
-
 class ViewController: UIViewController {
+    
+    var loginViewController: LoginViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        let loginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController")
-        loginViewController?.view.frame = view.frame
-        addChildViewController(loginViewController!)
-        view.addSubview((loginViewController?.view)!)
+        
+        if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
+            loginViewController = lg
+            lg.delegate = self
+            lg.view.frame = view.frame
+            addChildViewController(lg)
+            view.addSubview((lg.view)!)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,5 +33,11 @@ class ViewController: UIViewController {
         
     }
     
+}
+
+extension ViewController : Routes {
+    func processLogin(token: String, uid: String) {
+        loginViewController?.processLogin(token, uid: uid)
+    }
 }
 
