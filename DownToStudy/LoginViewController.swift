@@ -33,7 +33,13 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController : Routes {
     func processLogin(token: String, uid: String) {
+        
+        // Go ahead and save the token and uid in user defaults
         UserDefaultsManager.setString("token", value: token)
         UserDefaultsManager.setString("uid", value: uid)
+
+        StudyRoomProvider.request(.accountInfo()) { result in
+            print(result)
+        }
     }
 }
