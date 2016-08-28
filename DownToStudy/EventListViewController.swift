@@ -57,7 +57,7 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let messageViewController = storyboard?.instantiateViewControllerWithIdentifier("messageViewController")
-        navigationController?.pushViewController(messageViewController!, animated: true)
+        presentViewController(messageViewController!, animated: true, completion: nil)
     }
     
     // Page Controller protocol
