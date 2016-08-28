@@ -15,27 +15,26 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var btnStudy: UIButton!
     var didInitialLayout = false
+    var didInitialPresentation = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Update UI
-        reload(true)
+        reload(false)
         
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        if didInitialLayout {
-            //restartRotatingIfNeeded()
-        }
+        restartRotatingIfNeeded()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.sendSubviewToBack(radar)
-        restartRotatingIfNeeded()
+        //restartRotatingIfNeeded()
         didInitialLayout = true
     }
     
@@ -44,8 +43,9 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
     }
     
     func restartRotatingIfNeeded() -> Void {
-        if !radar.isRotating() {
+        if !radar.imageOne.isRotating() {
             rotateRadar()
+            radar.halo?.start()
         }
     }
     
@@ -77,7 +77,7 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
         if isAuthenticated {
             var delay = 0.0
             for sv in [titleLabel, subtitleLabel, btnStudy] {
-                UIView.animateWithDuration(0.3, delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
+                UIView.animateWithDuration(0.6, delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
                     sv.alpha = 1.0
                     sv.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
                     }, completion: nil)
@@ -127,8 +127,13 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func creation(creationController: CreationViewController, didFinishWithEvent: Event) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func creationDidFinish(creationController: CreationViewController, event: Event) {
+        dismissViewControllerAnimated(true) { [unowned self] in
+            // Show the event 
+            let detailEventViewController = self.storyboard?.instantiateViewControllerWithIdentifier("detailEventViewController") as! DetailEventViewController
+            detailEventViewController.event = event
+            self.presentViewController(detailEventViewController, animated: true, completion: nil)
+        }
     }
 
 }

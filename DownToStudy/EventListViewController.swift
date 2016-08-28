@@ -48,11 +48,6 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         events.append(Event(id: "3", name: "CS 101", locationName: "Tutoring room", availableSpots: 3, eventClass: csc, students: students))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

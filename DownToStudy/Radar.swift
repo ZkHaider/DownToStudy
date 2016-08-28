@@ -35,7 +35,6 @@ class Radar: UIView {
             pulsator.pulseInterval = 0
             pulsator.radius = 240.0
             pulsator.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.65).CGColor
-            pulsator.start()
             halo = pulsator
         }
     }
@@ -94,7 +93,7 @@ extension UIView {
     
     func isRotating() -> Bool {
         
-        if layer.animationForKey(rotationAnimationKey) != nil {
+        if let _ = layer.animationForKey(rotationAnimationKey) {
             return true
         }
         

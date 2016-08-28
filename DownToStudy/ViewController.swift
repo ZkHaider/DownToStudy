@@ -47,25 +47,6 @@ class ViewController : UIViewController, LoginViewControllerDelegate, UITabBarDe
         if let vc = storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as? ProfileViewController {
             viewControllers.append(vc)
         }
-        
-        // Check for authentication
-        let isAuthenticated = director.isUserAuthenticated()
-        if (!isAuthenticated) {
-            
-            // Show login if not authenticated
-            if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
-                loginViewController = lg
-                lg.delegate = self
-                lg.view.frame = view.frame
-                addChildViewController(lg)
-                view.addSubview((lg.view)!)
-            }
-            
-            // Hide the tab bar
-            bottomTabBarConstraint.constant = -(tabBar.bounds.size.height + 10.0) // 10px more cuz the radar icon goes out of bounds
-            view.layoutIfNeeded()
-            
-        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -96,6 +77,25 @@ class ViewController : UIViewController, LoginViewControllerDelegate, UITabBarDe
             
             // Scroll to 2nd page (at index 1)
             scrollTo(1, animated: false)
+            
+            // Check for authentication
+            let isAuthenticated = director.isUserAuthenticated()
+            if (!isAuthenticated) {
+                
+                // Show login if not authenticated
+                if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
+                    loginViewController = lg
+                    lg.delegate = self
+                    lg.view.frame = view.frame
+                    addChildViewController(lg)
+                    view.addSubview((lg.view)!)
+                }
+                
+                // Hide the tab bar
+                bottomTabBarConstraint.constant = -(tabBar.bounds.size.height + 10.0) // 10px more cuz the radar icon goes out of bounds
+                view.layoutIfNeeded()
+                
+            }
         }
     }
     

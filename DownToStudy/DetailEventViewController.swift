@@ -75,6 +75,10 @@ class DetailEventViewController: UIViewController {
         }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     @IBAction func btnClosePressed() {
         dismissViewControllerAnimated(true, completion: nil)
     }
