@@ -1917,7 +1917,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjp-6g-tME" customClass="TagListView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjp-6g-tME" customClass="TagListView" customModule="TagListView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -1961,12 +1961,12 @@
                                 <exclude reference="pno-y2-IbZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="KKF-9w-6lc"/>
-                                <exclude reference="QXt-l4-ML3"/>
+                                <exclude reference="Mvq-Jy-mDH"/>
                                 <exclude reference="WSc-qc-g0p"/>
                                 <exclude reference="d2E-Dj-KUU"/>
                                 <exclude reference="yrg-3K-gQS"/>
-                                <exclude reference="Mvq-Jy-mDH"/>
+                                <exclude reference="KKF-9w-6lc"/>
+                                <exclude reference="QXt-l4-ML3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1975,18 +1975,18 @@
                                 <include reference="pno-y2-IbZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="KKF-9w-6lc"/>
-                                <include reference="QXt-l4-ML3"/>
+                                <include reference="Mvq-Jy-mDH"/>
                                 <include reference="WSc-qc-g0p"/>
                                 <include reference="d2E-Dj-KUU"/>
                                 <include reference="yrg-3K-gQS"/>
-                                <include reference="Mvq-Jy-mDH"/>
+                                <include reference="KKF-9w-6lc"/>
+                                <include reference="QXt-l4-ML3"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="profilePicture" destination="pno-y2-IbZ" id="Q6d-fW-dTL"/>
-                        <outlet property="tagListView" destination="bjp-6g-tME" id="OQW-k2-ms5"/>
+                        <outlet property="tagListView" destination="bjp-6g-tME" id="Uxg-bp-Swl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMf-1Y-cnI" userLabel="First Responder" sceneMemberID="firstResponder"/>

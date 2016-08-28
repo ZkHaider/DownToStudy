@@ -12,14 +12,37 @@ import TagListView
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePicture: UIImageView!
-    
+        
     @IBOutlet weak var tagListView: TagListView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Go ahead and set the profile picture
         tagListView.backgroundColor = UIColor.clearColor()
+        tagListView.textFont = UIFont.systemFontOfSize(26)
+        tagListView.shadowRadius = 2
+        tagListView.shadowOpacity = 0.4
+        tagListView.shadowColor = UIColor.blackColor()
+        tagListView.shadowOffset = CGSize(width: 0, height: 4)
+        tagListView.alignment = .Center
+        
+        let math100 = tagListView.addTag("MATH 110")
+        math100.backgroundColor = UIColor(red:0.13, green:0.58, blue:0.95, alpha:1.00)
+        math100.layer.cornerRadius = 6
+        
+        let bio101 = tagListView.addTag("BIO 101")
+        bio101.backgroundColor = UIColor(red:0.29, green:0.68, blue:0.31, alpha:1.00)
+        bio101.layer.cornerRadius = 6
+        
+        let pol101 = tagListView.addTag("POL 101")
+        pol101.backgroundColor = UIColor(red:0.00, green:0.58, blue:0.53, alpha:1.00)
+        pol101.layer.cornerRadius = 6
+        
+        let nutr175 = tagListView.addTag("NUTR 175")
+        nutr175.backgroundColor = UIColor(red:0.95, green:0.26, blue:0.21, alpha:1.00)
+        nutr175.layer.cornerRadius = 6
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,13 +51,6 @@ class ProfileViewController: UIViewController {
         let userId = UserDefaultsManager.getString("uid")
         let profilePictureURL = String(format: "https://www.getstudyroom.com/api/accounts/avatar/%@?s=200", userId!)
         profilePicture.downloadAndSet(profilePictureURL, completion: nil)
-        
-        // Get our courses 
-        if let courses = UserDefaultsManager.getObject("courses") as? NSDictionary {
-            for (_, value) in courses {
-                tagListView.addTag(value["name"])
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
