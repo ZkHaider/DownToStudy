@@ -23,6 +23,7 @@
 		4B188ACE1D7272260038809E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188ACD1D7272260038809E /* LoginViewController.swift */; };
 		4B188AD11D728B770038809E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AD01D728B770038809E /* UserDefaultsManager.swift */; };
 		4B188AD41D728E1D0038809E /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AD31D728E1D0038809E /* Routes.swift */; };
+		6A2000BE1D72B82000011844 /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000BD1D72B82000011844 /* Radar.swift */; };
 		DCC84E0D0B07F23E2877C428 /* Pods_DownToStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4B188ACD1D7272260038809E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4B188AD01D728B770038809E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4B188AD31D728E1D0038809E /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		6A2000BD1D72B82000011844 /* Radar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
 		9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownToStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		4B188AB11D7237300038809E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				6A2000BD1D72B82000011844 /* Radar.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				4B188A9E1D7229190038809E /* ViewController.swift in Sources */,
 				4B188AD11D728B770038809E /* UserDefaultsManager.swift in Sources */,
 				4B188ABA1D723BE10038809E /* School.swift in Sources */,
+				6A2000BE1D72B82000011844 /* Radar.swift in Sources */,
 				4B188ABC1D723C3F0038809E /* Class.swift in Sources */,
 				4B188AB31D72377B0038809E /* Event.swift in Sources */,
 				4B188AB61D723B8A0038809E /* Location.swift in Sources */,

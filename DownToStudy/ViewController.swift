@@ -11,6 +11,7 @@ import Moya
 
 class ViewController: UIViewController {
     
+    @IBOutlet var radar: Radar!
     var loginViewController: LoginViewController?
 
     override func viewDidLoad() {
@@ -26,11 +27,21 @@ class ViewController: UIViewController {
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
+        restartRotatingIfNeeded()
+    }
+
+    func restartRotatingIfNeeded() -> Void {
+        if !radar.isRotating() {
+            rotateRadar()
+        }
+    }
+    
+    func rotateRadar() -> Void {
+        radar.startRotation()
     }
     
 }
