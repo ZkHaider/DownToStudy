@@ -22,4 +22,10 @@ public class ChatSender {
         
     }
     
+//    public func sendMessage(message: DTFMessageModelProtocol) {
+//        
+//    }
+//    
+//    private func fakeMessageStatus(message: )
+    
 }
