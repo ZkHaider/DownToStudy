@@ -14,6 +14,7 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var btnStudy: UIButton!
+    var didInitialLayout = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,15 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
         super.viewDidLayoutSubviews()
         view.sendSubviewToBack(radar)
         restartRotatingIfNeeded()
+        didInitialLayout = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if didInitialLayout {
+            restartRotatingIfNeeded()
+        }
     }
     
     func startLoadingAnimation() -> Void {

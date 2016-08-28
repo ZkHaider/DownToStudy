@@ -70,6 +70,8 @@ class Radar: UIView {
         
         bounceMainImage()
         
+        halo?.start()
+        
     }
     
     func bounceMainImage() -> Void {

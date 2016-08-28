@@ -11,19 +11,33 @@ import UIKit
 class CreationViewController: UIViewController {
     
     @IBOutlet var container: UIView!
+    var didInitialLayout = false
     weak var delegate: CreationViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var delay = 0.0
         for sv in container.subviews {
             sv.alpha = 0.0
             sv.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.75, 0.75)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if didInitialLayout {
+            return
+        }
+        
+        didInitialLayout = true
+        
+        var delay = 0.2
+        for sv in container.subviews {
             UIView.animateWithDuration(0.6, delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
                 sv.alpha = 1.0
                 sv.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
-            }, completion: nil)
+                }, completion: nil)
             delay += 0.1
         }
     }
