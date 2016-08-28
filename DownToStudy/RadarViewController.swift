@@ -9,27 +9,39 @@
 import UIKit
 
 class RadarViewController: UIViewController {
+    
+    @IBOutlet var radar: Radar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Hardcoded array of people if we're not authenticated
+        var images = [String]()
+        images.append("https://www.getstudyroom.com/api/accounts/avatar/431794?s=200")
+        images.append("https://www.getstudyroom.com/api/accounts/avatar/632705?s=200")
+        images.append("https://www.getstudyroom.com/api/accounts/avatar/715677?s=200")
+        images.append("https://luma-ef-prod.s3.amazonaws.com/user/822782/None/original.jpeg")
+        images.append("https://luma-ef-prod.s3.amazonaws.com/user/244270/None/original.jpeg")
+        images.append("https://luma-ef-prod.s3.amazonaws.com/user/738450/None/original.jpeg")
+        images.append("https://luma-ef-prod.s3.amazonaws.com/user/917808/None/original.jpeg")
+        images.append("https://luma-ef-prod.s3.amazonaws.com/user/264314/None/original.jpeg")
+        radar.update(images)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.sendSubviewToBack(radar)
+        restartRotatingIfNeeded()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func restartRotatingIfNeeded() -> Void {
+        if !radar.isRotating() {
+            rotateRadar()
+        }
     }
-    */
+    
+    func rotateRadar() -> Void {
+        radar.startRotation()
+    }
 
 }

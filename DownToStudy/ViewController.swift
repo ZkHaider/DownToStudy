@@ -11,24 +11,26 @@ import Moya
 
 class ViewController: UIViewController {
     
-    @IBOutlet var radar: Radar!
+    var viewControllers = [UIViewController]()
     var loginViewController: LoginViewController?
+    @IBOutlet var scrollView: UIScrollView!
+    var didLayoutInitialViewControllers = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Hardcoded array of people if we're not authenticated
-        var images = [String]()
-        images.append("https://www.getstudyroom.com/api/accounts/avatar/431794?s=200")
-        images.append("https://www.getstudyroom.com/api/accounts/avatar/632705?s=200")
-        images.append("https://www.getstudyroom.com/api/accounts/avatar/715677?s=200")
-        images.append("https://luma-ef-prod.s3.amazonaws.com/user/822782/None/original.jpeg")
-        images.append("https://luma-ef-prod.s3.amazonaws.com/user/244270/None/original.jpeg")
-        images.append("https://luma-ef-prod.s3.amazonaws.com/user/738450/None/original.jpeg")
-        images.append("https://luma-ef-prod.s3.amazonaws.com/user/917808/None/original.jpeg")
-        images.append("https://luma-ef-prod.s3.amazonaws.com/user/264314/None/original.jpeg")
-        radar.update(images)
+        // Load view controllers
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("eventListViewController") as? EventListViewController {
+            viewControllers.append(vc)
+        }
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("radarViewController") as? RadarViewController {
+            viewControllers.append(vc)
+        }
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("profileViewController") as? ProfileViewController {
+            viewControllers.append(vc)
+        }
         
+        // Check for authentication, show login if not authenticated
         if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
             loginViewController = lg
             lg.delegate = self
@@ -36,26 +38,41 @@ class ViewController: UIViewController {
             addChildViewController(lg)
             view.addSubview((lg.view)!)
         }
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        view.sendSubviewToBack(radar)
-        restartRotatingIfNeeded()
-    }
-
-    func restartRotatingIfNeeded() -> Void {
-        if !radar.isRotating() {
-            rotateRadar()
+        
+        if !didLayoutInitialViewControllers {
+            didLayoutInitialViewControllers = true
+            view.sendSubviewToBack(scrollView)
+            
+            // Layout all view controller's views
+            var xOffset = CGFloat(0.0);
+            for vc in viewControllers {
+                addChildViewController(vc)
+                var frame = view.bounds
+                frame.origin.x = xOffset
+                vc.view.frame = frame
+                scrollView.addSubview(vc.view)
+                xOffset += frame.size.width
+            }
+            
+            // Resize scroll view to fit everything
+            let size = CGSize.init(width: xOffset, height: view.bounds.size.height)
+            scrollView.contentSize = size
+            
+            // Scroll to 2nd page (at index 1)
+            scrollTo(1, animated: false)
         }
     }
     
-    func rotateRadar() -> Void {
-        radar.startRotation()
+    func scrollTo(page: Int, animated: Bool) {
+        let xOffset = scrollView.bounds.size.width * CGFloat(page)
+        scrollView.setContentOffset(CGPoint.init(x: xOffset, y: 0.0), animated: animated)
     }
-    
 }
+
 
 extension ViewController : Routes {
     func processLogin(token: String, uid: String) {
