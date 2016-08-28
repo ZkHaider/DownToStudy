@@ -11,7 +11,7 @@ import Chatto
 
 class MessageViewController: BaseChatViewController {
     
-    var fakeMessageSender: Fak
+    var chatSender: ChatSender!
 
     override func viewDidLoad() {
         super.viewDidLoad()
