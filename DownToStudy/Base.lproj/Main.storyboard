@@ -20,20 +20,44 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ARE YOU DOWN TO STUDY?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWI-Kh-EnN">
                                 <rect key="frame" x="189" y="20" width="223" height="21"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-CQ-uut">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-CQ-uut">
                                 <rect key="frame" x="174" y="504" width="252" height="76"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="OvN-zI-BR6"/>
+                                    <constraint firstAttribute="width" constant="300" id="U2u-mt-Ham"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
-                                <state key="normal" title="LOGIN WITH STUDYROOM"/>
+                                <state key="normal" title="LOGIN WITH STUDYROOM">
+                                    <color key="titleColor" red="0.96766644716262817" green="0.070534534752368927" blue="0.30286473035812378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OvN-zI-BR6"/>
+                                        <exclude reference="U2u-mt-Ham"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OvN-zI-BR6"/>
+                                        <include reference="U2u-mt-Ham"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="tappedLoginButton:" destination="PKc-jk-aMw" eventType="touchUpInside" id="eI2-pC-6aR"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WWR-Tf-VzY" firstAttribute="top" secondItem="mdR-CQ-uut" secondAttribute="bottom" constant="20" id="Erm-Lv-Tmt"/>
                             <constraint firstItem="zWI-Kh-EnN" firstAttribute="top" secondItem="cAS-da-4R8" secondAttribute="bottom" id="HFO-gz-TBM">
@@ -199,7 +223,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96766644716262817" green="0.070534534752368927" blue="0.30286473035812378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uDP-OL-PUL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lPi-4u-9T7"/>
                             <constraint firstItem="uDP-OL-PUL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rza-Py-b4M"/>
