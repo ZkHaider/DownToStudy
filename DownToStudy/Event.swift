@@ -12,5 +12,7 @@ struct Event {
     let id : String?
     let name: String?
     let locationName: String?
+    let availableSpots: Int?
     let eventClass: Class?
+    var students = [User]()
 }

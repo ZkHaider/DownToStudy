@@ -13,7 +13,7 @@ class EventCell: UITableViewCell {
     // Initialize our views
     @IBOutlet weak var userPicture1: UIImageView! {
         didSet {
-            userPicture1.layer.borderWidth = 2
+            userPicture1.layer.borderWidth = 3
             userPicture1.layer.borderColor = UIColor.whiteColor().CGColor
         }
     }
@@ -42,6 +42,11 @@ class EventCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var spotsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     
@@ -51,6 +56,38 @@ class EventCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func update(event: Event) -> Void {
+        courseLabel.text = event.eventClass?.name
+        locationLabel.text = "Meeting @ \(event.locationName!)"
+        if let spots = event.availableSpots {
+            switch spots {
+            case 0:
+                spotsLabel.text = "No spots available"
+                return
+            case 1:
+                spotsLabel.text = "1 spot available"
+                return
+            default:
+                spotsLabel.text = "\(spots) spots available"
+            }
+            
+            let userCount = event.students.count
+            for (index, sv) in [userPicture1, userPicture2, userPicture3, userPicture4, userPicture5].enumerate() {
+                if index < userCount {
+                    sv.alpha = 1.0
+                    let student = event.students[index]
+                    if let uid = student.uid {
+                        let path = director.urPathForProfilePic(uid)
+                        sv.downloadAndSet(path, completion: nil)
+                    }
+                } else {
+                    sv.alpha = 0.0
+                }
+            }
+        }
+        
     }
 
 }

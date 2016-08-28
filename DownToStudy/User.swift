@@ -9,7 +9,7 @@
 import Foundation
 
 struct User {
-    let id: String?
+    let uid: String?
     let name: String?
     let school: School?
     let classes: [Class]?

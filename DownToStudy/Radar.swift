@@ -70,7 +70,7 @@ class Radar: UIView {
         
         bounceMainImage()
         
-        halo?.start()
+        //halo?.start()
         
     }
     

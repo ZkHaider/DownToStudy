@@ -20,23 +20,23 @@ class RadarViewController: UIViewController, CreationViewControllerDelegate {
         super.viewDidLoad()
 
         // Update UI
-        reload(false)
+        reload(true)
         
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        view.sendSubviewToBack(radar)
-        restartRotatingIfNeeded()
-        didInitialLayout = true
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if didInitialLayout {
-            restartRotatingIfNeeded()
+            //restartRotatingIfNeeded()
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.sendSubviewToBack(radar)
+        restartRotatingIfNeeded()
+        didInitialLayout = true
     }
     
     func startLoadingAnimation() -> Void {
