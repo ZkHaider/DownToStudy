@@ -26,25 +26,25 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         let math = Class(id: "2", name: "MATH 110: Business Calculus", school: "UC Santa Cruz")
         let csc = Class(id: "3", name: "CS 101: Algorithms", school: "UC Santa Cruz")
         let demoStudents = director.demoStudents
-        var randomIndex = arc4random_uniform(UInt32(demoStudents.count))
+        var randomIndex = Int(arc4random()) % demoStudents.count
         randomIndex = randomIndex > 0 ? randomIndex : 1
         var students = [User]()
-        for (index, _) in [0...Int(randomIndex)].enumerate()  {
-            students.append(demoStudents[index])
+        for idx in Array(0...randomIndex) {
+            students.append(demoStudents[idx])
         }
         events.append(Event(id: "1", name: "BIO 100", locationName: "Peet's in the library", availableSpots: 2, eventClass: bio, students: students))
-        randomIndex = arc4random_uniform(UInt32(demoStudents.count))
+        randomIndex = Int(arc4random()) % demoStudents.count
         randomIndex = randomIndex > 0 ? randomIndex : 1
         students = [User]()
-        for (index, _) in [0...Int(randomIndex)].enumerate()  {
-            students.append(demoStudents[index])
+        for idx in Array(0...randomIndex) {
+            students.append(demoStudents[idx])
         }
         events.append(Event(id: "2", name: "MATH 110", locationName: "Basement study room", availableSpots: 1, eventClass: math, students: students))
-        randomIndex = arc4random_uniform(UInt32(demoStudents.count))
+        randomIndex = Int(arc4random()) % demoStudents.count
         randomIndex = randomIndex > 0 ? randomIndex : 1
         students = [User]()
-        for (index, _) in [0...Int(randomIndex)].enumerate()  {
-            students.append(demoStudents[index])
+        for idx in Array(0...randomIndex) {
+            students.append(demoStudents[idx])
         }
         events.append(Event(id: "3", name: "CS 101", locationName: "Tutoring room", availableSpots: 3, eventClass: csc, students: students))
     }

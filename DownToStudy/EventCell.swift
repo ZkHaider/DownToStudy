@@ -65,15 +65,17 @@ class EventCell: UITableViewCell {
             switch spots {
             case 0:
                 spotsLabel.text = "No spots available"
-                return
+                break
             case 1:
                 spotsLabel.text = "1 spot available"
-                return
+                break
             default:
                 spotsLabel.text = "\(spots) spots available"
+                break
             }
             
             let userCount = event.students.count
+            print("User Count: \(userCount)")
             for (index, sv) in [userPicture1, userPicture2, userPicture3, userPicture4, userPicture5].enumerate() {
                 if index < userCount {
                     sv.alpha = 1.0
