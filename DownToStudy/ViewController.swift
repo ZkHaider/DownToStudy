@@ -15,7 +15,7 @@ protocol PageController : NSObjectProtocol {
 
 extension UIViewController: PageController {
     func reload(animated: Bool) -> Void {
-        
+        print("Reload")
     }
 }
 

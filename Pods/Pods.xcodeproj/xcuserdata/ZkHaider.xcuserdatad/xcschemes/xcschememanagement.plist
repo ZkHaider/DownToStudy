@@ -54,15 +54,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TagListView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>07F49D076E551F735C6038E2CB44B3B3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>132E79751BAAB40ADF9026E7C1F6B002</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +77,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1BFFA558C3ECC8B312F1F69C9F3C08F8</key>
+		<key>443F6597A151B2E3186744A1B39BBF5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>5F5B5F6ED63BBEB605BA2AC86BAB8A3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>694EF49283AEEBFD0C967E78FA1D8963</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A582B8DBABBB6BAE7E85DCD3A876DB34</key>
+		<key>B468DC7854F6962A02AEDD2324421902</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>D58CAD74411F3EA5D73A48FFB3DC29A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1CDD714CEAFE7162D98EE083DA8BAB9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

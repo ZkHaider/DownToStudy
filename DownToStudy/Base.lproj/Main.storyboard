@@ -1913,8 +1913,62 @@
                     <view key="view" contentMode="scaleToFill" id="sye-kw-lEK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pno-y2-IbZ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="azy-ag-Tak"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="azy-ag-Tak"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="125" y="60" width="150" height="110"/>
+                                    <mask key="constraints">
+                                        <include reference="azy-ag-Tak"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.96766644716262817" green="0.070534534752368927" blue="0.30286473035812378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mtG-Zm-hOx" firstAttribute="top" secondItem="pno-y2-IbZ" secondAttribute="bottom" constant="630" id="P1a-or-QrP"/>
+                            <constraint firstItem="pno-y2-IbZ" firstAttribute="centerX" secondItem="sye-kw-lEK" secondAttribute="centerX" id="VlE-3V-lbl"/>
+                            <constraint firstItem="pno-y2-IbZ" firstAttribute="top" secondItem="XxM-tb-1Qq" secondAttribute="bottom" id="ZBg-7y-y9R">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pno-y2-IbZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="VlE-3V-lbl"/>
+                                <exclude reference="ZBg-7y-y9R"/>
+                                <exclude reference="P1a-or-QrP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pno-y2-IbZ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="VlE-3V-lbl"/>
+                                <include reference="ZBg-7y-y9R"/>
+                                <exclude reference="P1a-or-QrP"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="profilePicture" destination="pno-y2-IbZ" id="Q6d-fW-dTL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMf-1Y-cnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

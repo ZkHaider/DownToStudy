@@ -11,6 +11,7 @@ target 'DownToStudy' do
   pod 'Moya-ObjectMapper'
   pod ‘Pulsator’
   pod 'Chatto'
-  pod 'ChattoAdditions'
+  pod 'ChattoAdditions’
+  pod 'TagListView'
 
 end
