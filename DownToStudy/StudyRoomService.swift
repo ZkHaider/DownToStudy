@@ -18,9 +18,6 @@ private extension String {
 // Provider
 public let StudyRoomProvider = MoyaProvider<StudyRoomService>()
 
-// Client id
-let ClientId = ""
-
 public enum StudyRoomService {
     case accountInfo()
     case getCourses(String, Int);

@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -43,7 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // For deep linking and single sign on 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        print("Launched application from single sign on and / or launched from deep links")
+
+        let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)
+        let queryItems = components?.queryItems
+        print(queryItems![0])
+        print(queryItems![1])
         
         if (url.scheme == "sr4") {
             
