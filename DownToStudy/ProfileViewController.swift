@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import TagListView
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePicture: UIImageView!
     
+    @IBOutlet weak var tagListView: TagListView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Go ahead and set the profile picture
+        tagListView.backgroundColor = UIColor.clearColor()
     }
     
     override func viewDidLayoutSubviews() {
@@ -24,6 +28,13 @@ class ProfileViewController: UIViewController {
         let userId = UserDefaultsManager.getString("uid")
         let profilePictureURL = String(format: "https://www.getstudyroom.com/api/accounts/avatar/%@?s=200", userId!)
         profilePicture.downloadAndSet(profilePictureURL, completion: nil)
+        
+        // Get our courses 
+        if let courses = UserDefaultsManager.getObject("courses") as? NSDictionary {
+            for (_, value) in courses {
+                tagListView.addTag(value["name"])
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
