@@ -11,6 +11,8 @@ import Moya
 
 class ViewController: UIViewController {
     
+    let debugging = true
+    
     var viewControllers = [UIViewController]()
     var loginViewController: LoginViewController?
     @IBOutlet var scrollView: UIScrollView!
@@ -31,12 +33,14 @@ class ViewController: UIViewController {
         }
         
         // Check for authentication, show login if not authenticated
-        if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
-            loginViewController = lg
-            lg.delegate = self
-            lg.view.frame = view.frame
-            addChildViewController(lg)
-            view.addSubview((lg.view)!)
+        if (!debugging) {
+            if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
+                loginViewController = lg
+                lg.delegate = self
+                lg.view.frame = view.frame
+                addChildViewController(lg)
+                view.addSubview((lg.view)!)
+            }
         }
     }
     

@@ -8,12 +8,18 @@
 
 import UIKit
 
-class EventListViewController: UIViewController {
+class EventListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var eventTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Go ahead and set the delegate and datasource for the event list
+        eventTableView.dataSource = self
+        eventTableView.delegate = self
+        eventTableView.backgroundColor = UIColor.clearColor()
+        eventTableView.contentInset = UIEdgeInsetsMake(60, 0, 0, 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +27,32 @@ class EventListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        // If position 0 return the header cell else just return an event cell
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCellWithIdentifier("eventHeaderCell") as UITableViewCell!
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("eventCell") as UITableViewCell!
+            return cell
+        }
     }
-    */
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // TODO
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // TODO find row
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Do something if event selected
+    }
 
 }
