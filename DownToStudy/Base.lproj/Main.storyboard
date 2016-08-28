@@ -64,10 +64,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-OL-PUL" userLabel="Radar" customClass="Radar" customModule="DownToStudy" customModuleProvider="target">
+                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-OL-PUL" userLabel="Radar" customClass="Radar" customModule="DownToStudy" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor6" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-Kk-PBB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-Kk-PBB">
                                         <rect key="frame" x="66" y="224" width="54" height="54"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -78,18 +78,31 @@
                                             <rect key="frame" x="20" y="243" width="54" height="54"/>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor7" translatesAutoresizingMaskIntoConstraints="NO" id="AqM-32-Hgb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AqM-32-Hgb">
                                         <rect key="frame" x="103" y="50" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9ct-0u-QRz"/>
+                                            <constraint firstAttribute="width" constant="40" id="SFc-Sg-d0M"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="66" y="26" width="40" height="40"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9ct-0u-QRz"/>
+                                                <exclude reference="SFc-Sg-d0M"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="9ct-0u-QRz"/>
+                                                <include reference="SFc-Sg-d0M"/>
+                                            </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor4" translatesAutoresizingMaskIntoConstraints="NO" id="efG-8S-thk">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efG-8S-thk">
                                         <rect key="frame" x="178" y="156" width="60" height="60"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -100,7 +113,7 @@
                                             <rect key="frame" x="305" y="73" width="60" height="60"/>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor2" translatesAutoresizingMaskIntoConstraints="NO" id="om6-3G-0IO">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="om6-3G-0IO">
                                         <rect key="frame" x="418" y="351" width="80" height="80"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -111,18 +124,31 @@
                                             <rect key="frame" x="328" y="336" width="37" height="37"/>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor1" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-sa-lD7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-sa-lD7">
                                         <rect key="frame" x="92" y="419" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="HWh-MX-KKY"/>
+                                            <constraint firstAttribute="width" constant="100" id="qfu-lP-p2o"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="150" y="150" width="100" height="100"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HWh-MX-KKY"/>
+                                                <exclude reference="qfu-lP-p2o"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="HWh-MX-KKY"/>
+                                                <include reference="qfu-lP-p2o"/>
+                                            </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutor5" translatesAutoresizingMaskIntoConstraints="NO" id="U2y-M0-dRa">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U2y-M0-dRa">
                                         <rect key="frame" x="412" y="115" width="50" height="50"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -134,15 +160,35 @@
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="6cd-sa-lD7" firstAttribute="leading" secondItem="AqM-32-Hgb" secondAttribute="leading" constant="84" id="6f4-le-zVI"/>
                                     <constraint firstAttribute="height" constant="600" id="Mja-4i-R22">
                                         <variation key="heightClass=regular-widthClass=compact" constant="400"/>
                                     </constraint>
+                                    <constraint firstItem="6cd-sa-lD7" firstAttribute="top" secondItem="AqM-32-Hgb" secondAttribute="top" constant="124" id="O40-hr-7qW"/>
+                                    <constraint firstItem="6cd-sa-lD7" firstAttribute="centerX" secondItem="uDP-OL-PUL" secondAttribute="centerX" id="WGN-va-WNA"/>
+                                    <constraint firstItem="6cd-sa-lD7" firstAttribute="centerY" secondItem="uDP-OL-PUL" secondAttribute="centerY" id="aZG-tm-HQd"/>
                                     <constraint firstAttribute="width" constant="600" id="fhr-Cj-L0k">
                                         <variation key="heightClass=regular-widthClass=compact" constant="400"/>
                                     </constraint>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6f4-le-zVI"/>
+                                        <exclude reference="O40-hr-7qW"/>
+                                        <exclude reference="WGN-va-WNA"/>
+                                        <exclude reference="aZG-tm-HQd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6f4-le-zVI"/>
+                                        <include reference="O40-hr-7qW"/>
+                                        <include reference="WGN-va-WNA"/>
+                                        <include reference="aZG-tm-HQd"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="imageFive" destination="om6-3G-0IO" id="GHo-nz-KEG"/>
                                     <outlet property="imageFour" destination="AqM-32-Hgb" id="BFf-fo-cLO"/>
@@ -186,12 +232,4 @@
             <point key="canvasLocation" x="439.5" y="364.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="tutor1" width="22" height="22"/>
-        <image name="tutor2" width="22" height="22"/>
-        <image name="tutor4" width="22" height="22"/>
-        <image name="tutor5" width="22" height="22"/>
-        <image name="tutor6" width="22" height="22"/>
-        <image name="tutor7" width="22" height="22"/>
-    </resources>
 </document>
