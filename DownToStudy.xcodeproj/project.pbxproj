@@ -11,6 +11,10 @@
 		4B07C37C1D72C93100F96689 /* nearby_people.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B07C37B1D72C93100F96689 /* nearby_people.json */; };
 		4B07C37E1D72CE7800F96689 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C37D1D72CE7800F96689 /* Message.swift */; };
 		4B07C3801D72D11400F96689 /* available_events.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B07C37F1D72D11400F96689 /* available_events.json */; };
+		4B07C3841D72FA9D00F96689 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C3831D72FA9D00F96689 /* EventCell.swift */; };
+		4B07C3861D72FF8E00F96689 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C3851D72FF8E00F96689 /* MessageViewController.swift */; };
+		4B07C3891D730AB200F96689 /* ChatSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C3881D730AB200F96689 /* ChatSender.swift */; };
+		4B07C38C1D730D0B00F96689 /* Director.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C38B1D730D0B00F96689 /* Director.swift */; };
 		4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188A9B1D7229190038809E /* AppDelegate.swift */; };
 		4B188A9E1D7229190038809E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188A9D1D7229190038809E /* ViewController.swift */; };
 		4B188AA11D7229190038809E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B188A9F1D7229190038809E /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 		4B07C37B1D72C93100F96689 /* nearby_people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nearby_people.json; sourceTree = "<group>"; };
 		4B07C37D1D72CE7800F96689 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4B07C37F1D72D11400F96689 /* available_events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = available_events.json; sourceTree = "<group>"; };
+		4B07C3831D72FA9D00F96689 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		4B07C3851D72FF8E00F96689 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		4B07C3881D730AB200F96689 /* ChatSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSender.swift; sourceTree = "<group>"; };
+		4B07C38B1D730D0B00F96689 /* Director.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Director.swift; sourceTree = "<group>"; };
 		4B188A981D7229190038809E /* DownToStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownToStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B188A9B1D7229190038809E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B188A9D1D7229190038809E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +110,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		4B07C3871D730AA900F96689 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4B07C3881D730AB200F96689 /* ChatSender.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		4B07C38A1D730C9C00F96689 /* Directors */ = {
+			isa = PBXGroup;
+			children = (
+				4B07C38B1D730D0B00F96689 /* Director.swift */,
+			);
+			name = Directors;
+			sourceTree = "<group>";
+		};
 		4B188A8F1D7229190038809E = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +147,8 @@
 		4B188A9A1D7229190038809E /* DownToStudy */ = {
 			isa = PBXGroup;
 			children = (
+				4B07C38A1D730C9C00F96689 /* Directors */,
+				4B07C3871D730AA900F96689 /* Chat */,
 				6A2000C91D72EF8700011844 /* Extensions */,
 				4B07C37A1D72C8FF00F96689 /* Resources */,
 				4B188ACF1D728B5A0038809E /* Tools */,
@@ -174,6 +200,7 @@
 				6A2000C31D72DC6F00011844 /* ProfileViewController.swift */,
 				6A2000C51D72DC7C00011844 /* CreationViewController.swift */,
 				6A2000C71D72DC8900011844 /* EventViewController.swift */,
+				4B07C3851D72FF8E00F96689 /* MessageViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +208,7 @@
 		4B188AB01D7237270038809E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4B07C3831D72FA9D00F96689 /* EventCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -376,8 +404,11 @@
 				6A2000BE1D72B82000011844 /* Radar.swift in Sources */,
 				4B188ABC1D723C3F0038809E /* Class.swift in Sources */,
 				4B188AB31D72377B0038809E /* Event.swift in Sources */,
+				4B07C3861D72FF8E00F96689 /* MessageViewController.swift in Sources */,
 				4B188AB61D723B8A0038809E /* Location.swift in Sources */,
 				6A2000C41D72DC6F00011844 /* ProfileViewController.swift in Sources */,
+				4B07C38C1D730D0B00F96689 /* Director.swift in Sources */,
+				4B07C3891D730AB200F96689 /* ChatSender.swift in Sources */,
 				4B07C3781D72C32100F96689 /* DownToStudyService.swift in Sources */,
 				4B188AB81D723B980038809E /* User.swift in Sources */,
 				4B188AD41D728E1D0038809E /* Routes.swift in Sources */,
@@ -386,6 +417,7 @@
 				6A2000C61D72DC7C00011844 /* CreationViewController.swift in Sources */,
 				4B188AC01D7242820038809E /* StudyRoomService.swift in Sources */,
 				4B07C37E1D72CE7800F96689 /* Message.swift in Sources */,
+				4B07C3841D72FA9D00F96689 /* EventCell.swift in Sources */,
 				4B188AC91D72644B0038809E /* DeviceUserResponse.swift in Sources */,
 				4B188ACE1D7272260038809E /* LoginViewController.swift in Sources */,
 			);

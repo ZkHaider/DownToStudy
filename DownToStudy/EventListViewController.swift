@@ -32,9 +32,11 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         // If position 0 return the header cell else just return an event cell
         if (indexPath.row == 0) {
             let cell = tableView.dequeueReusableCellWithIdentifier("eventHeaderCell") as UITableViewCell!
+            cell.selectionStyle = UITableViewCellSelectionStyle.Blue;
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("eventCell") as UITableViewCell!
+            cell.selectionStyle = UITableViewCellSelectionStyle.Blue;
             return cell
         }
     }
@@ -48,11 +50,14 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // Do something if event selected
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let messageViewController = storyboard?.instantiateViewControllerWithIdentifier("messageViewController")
+        navigationController?.pushViewController(messageViewController!, animated: true)
     }
     
     // Page Controller protocol

@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Chatto.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ChattoAdditions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moya-ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>132E79751BAAB40ADF9026E7C1F6B002</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>137187ECC6456340681706DDFC4848CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>13D66F1A84A3FEAE24C7D016DA929FB7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3F619C466BBF0019EFAF44BADE98951B</key>
+		<key>1BFFA558C3ECC8B312F1F69C9F3C08F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76C62B29736D0FC991AD82C8E45C0E66</key>
+		<key>5F5B5F6ED63BBEB605BA2AC86BAB8A3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92DDA294668131B89B28190B27132F5B</key>
+		<key>A582B8DBABBB6BAE7E85DCD3A876DB34</key>
 		<dict>
 			<key>primary</key>
 			<true/>
