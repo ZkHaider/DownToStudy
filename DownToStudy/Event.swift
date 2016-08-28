@@ -11,4 +11,6 @@ import Foundation
 struct Event {
     let id : String?
     let name: String?
+    let school: School?
+    let location: Location?
 }

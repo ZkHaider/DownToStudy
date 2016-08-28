@@ -7,5 +7,7 @@ target 'DownToStudy' do
 
   # Pods for DownToStudy
   pod 'Moya'
+  pod 'SwiftyJSON'
+  pod 'Moya-ObjectMapper'
 
 end

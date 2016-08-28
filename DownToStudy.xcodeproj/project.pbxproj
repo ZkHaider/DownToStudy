@@ -13,6 +13,13 @@
 		4B188AA31D7229190038809E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B188AA21D7229190038809E /* Assets.xcassets */; };
 		4B188AA61D7229190038809E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B188AA41D7229190038809E /* LaunchScreen.storyboard */; };
 		4B188AB31D72377B0038809E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AB21D72377B0038809E /* Event.swift */; };
+		4B188AB61D723B8A0038809E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AB51D723B8A0038809E /* Location.swift */; };
+		4B188AB81D723B980038809E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AB71D723B980038809E /* User.swift */; };
+		4B188ABA1D723BE10038809E /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AB91D723BE10038809E /* School.swift */; };
+		4B188ABC1D723C3F0038809E /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188ABB1D723C3F0038809E /* Class.swift */; };
+		4B188AC01D7242820038809E /* StudyRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188ABF1D7242820038809E /* StudyRoomService.swift */; };
+		4B188AC71D7260E90038809E /* PrimarySchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AC61D7260E90038809E /* PrimarySchool.swift */; };
+		4B188AC91D72644B0038809E /* DeviceUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AC81D72644B0038809E /* DeviceUserResponse.swift */; };
 		DCC84E0D0B07F23E2877C428 /* Pods_DownToStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +32,13 @@
 		4B188AA51D7229190038809E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B188AA71D7229190038809E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B188AB21D72377B0038809E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4B188AB51D723B8A0038809E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4B188AB71D723B980038809E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4B188AB91D723BE10038809E /* School.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		4B188ABB1D723C3F0038809E /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		4B188ABF1D7242820038809E /* StudyRoomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyRoomService.swift; sourceTree = "<group>"; };
+		4B188AC61D7260E90038809E /* PrimarySchool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimarySchool.swift; sourceTree = "<group>"; };
+		4B188AC81D72644B0038809E /* DeviceUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceUserResponse.swift; sourceTree = "<group>"; };
 		9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownToStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +101,13 @@
 		4B188AAD1D7237070038809E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B188AC31D725F820038809E /* Responses */,
 				4B188AB21D72377B0038809E /* Event.swift */,
+				4B188AB51D723B8A0038809E /* Location.swift */,
+				4B188AB71D723B980038809E /* User.swift */,
+				4B188AB91D723BE10038809E /* School.swift */,
+				4B188ABB1D723C3F0038809E /* Class.swift */,
+				4B188AC61D7260E90038809E /* PrimarySchool.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -127,8 +147,17 @@
 		4B188AB41D723A2E0038809E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4B188ABF1D7242820038809E /* StudyRoomService.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		4B188AC31D725F820038809E /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				4B188AC81D72644B0038809E /* DeviceUserResponse.swift */,
+			);
+			name = Responses;
 			sourceTree = "<group>";
 		};
 		EA1586CFB29A39E359C1A589 /* Frameworks */ = {
@@ -261,9 +290,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B188AC71D7260E90038809E /* PrimarySchool.swift in Sources */,
 				4B188A9E1D7229190038809E /* ViewController.swift in Sources */,
+				4B188ABA1D723BE10038809E /* School.swift in Sources */,
+				4B188ABC1D723C3F0038809E /* Class.swift in Sources */,
 				4B188AB31D72377B0038809E /* Event.swift in Sources */,
+				4B188AB61D723B8A0038809E /* Location.swift in Sources */,
+				4B188AB81D723B980038809E /* User.swift in Sources */,
 				4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */,
+				4B188AC01D7242820038809E /* StudyRoomService.swift in Sources */,
+				4B188AC91D72644B0038809E /* DeviceUserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

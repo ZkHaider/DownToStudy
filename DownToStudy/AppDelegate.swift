@@ -40,6 +40,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    // For deep linking and single sign on 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        print("Launched application from single sign on and / or launched from deep links")
+        
+        if (url.scheme == "sr4") {
+            
+            // Go ahead and check the params 
+            if (url.parameterString != nil) {
+                
+                // Go ahead and parse it out 
+            }
+        }
+        return true
+    }
 
 
 }
