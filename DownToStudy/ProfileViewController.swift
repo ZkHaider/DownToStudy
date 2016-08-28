@@ -47,24 +47,25 @@ class ProfileViewController: UIViewController {
         nutr175.backgroundColor = UIColor(red:0.95, green:0.26, blue:0.21, alpha:1.00)
         nutr175.layer.cornerRadius = 6
         
+        reloadUI()
         
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let userId = UserDefaultsManager.getString("uid")
-        let profilePictureURL = String(format: "https://www.getstudyroom.com/api/accounts/avatar/%@?s=200", userId!)
-        profilePicture.downloadAndSet(profilePictureURL, completion: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func reloadUI () {
+        
+        let isAuthenticated = director.isUserAuthenticated()
+        if isAuthenticated {
+            
+            if let userId = UserDefaultsManager.getString("uid") {
+                let profilePictureURL = String(format: "https://www.getstudyroom.com/api/accounts/avatar/%@?s=200", userId)
+                profilePicture.downloadAndSet(profilePictureURL, completion: nil)
+            }
+        }
     }
     
     // Page Controller protocol
     override func reload(animated: Bool) -> Void {
+        reloadUI()
     }
 
 }
