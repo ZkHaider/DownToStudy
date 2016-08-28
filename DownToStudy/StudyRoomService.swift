@@ -41,7 +41,7 @@ public let StudyRoomProvider = MoyaProvider<StudyRoomService>(endpointClosure: e
 
 public enum StudyRoomService {
     case accountInfo()
-    case getCourses(String, Int);
+    case getCourses();
 }
 
 extension StudyRoomService : TargetType {
@@ -56,8 +56,8 @@ extension StudyRoomService : TargetType {
         switch self {
             case .accountInfo():
                 return ("/accounts/info/")
-            case .getCourses(let annotate, let filter):
-                return ("/world/my-courses?annotate=\(annotate)&filter=\(filter)")
+            case .getCourses():
+                return ("/world/my-courses")
         }
     }
     
@@ -71,7 +71,12 @@ extension StudyRoomService : TargetType {
     }
     
     public var parameters: [String: AnyObject]? {
-        return nil
+        switch self {
+        case .accountInfo():
+            return nil
+        case .getCourses():
+            return ["annotate": "irelation:enrollment", "filter": "1"]
+        }
     }
     
     public var sampleData: NSData {

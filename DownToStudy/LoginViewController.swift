@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     func launchStudyRoom() {
         UIApplication.sharedApplication().openURL(NSURL (string: "srauth://authorize?client_id=4")!)
     }
-
+    
 }
 
 extension LoginViewController : Routes {
@@ -39,6 +39,10 @@ extension LoginViewController : Routes {
         UserDefaultsManager.setString("uid", value: uid)
 
         StudyRoomProvider.request(.accountInfo()) { result in
+            print(result)
+        }
+        
+        StudyRoomProvider.request(.getCourses()) { result in
             print(result)
         }
     }
