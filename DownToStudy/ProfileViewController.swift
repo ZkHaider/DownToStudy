@@ -17,9 +17,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profilePicture.layer.shadowOffset = CGSize(width: 0, height: 4)
+        profilePicture.layer.shadowOpacity = 0.4
+        profilePicture.layer.shadowColor = UIColor.blackColor().CGColor
+        profilePicture.layer.shadowRadius = 2
+        
         // Go ahead and set the profile picture
         tagListView.backgroundColor = UIColor.clearColor()
-        tagListView.textFont = UIFont.systemFontOfSize(26)
+        tagListView.textFont = UIFont.systemFontOfSize(16)
         tagListView.shadowRadius = 2
         tagListView.shadowOpacity = 0.4
         tagListView.shadowColor = UIColor.blackColor()
