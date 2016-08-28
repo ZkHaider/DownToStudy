@@ -28,6 +28,11 @@
 		4B188AD11D728B770038809E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AD01D728B770038809E /* UserDefaultsManager.swift */; };
 		4B188AD41D728E1D0038809E /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188AD31D728E1D0038809E /* Routes.swift */; };
 		6A2000BE1D72B82000011844 /* Radar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000BD1D72B82000011844 /* Radar.swift */; };
+		6A2000C01D72DC3D00011844 /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000BF1D72DC3D00011844 /* RadarViewController.swift */; };
+		6A2000C21D72DC6200011844 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000C11D72DC6200011844 /* EventListViewController.swift */; };
+		6A2000C41D72DC6F00011844 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000C31D72DC6F00011844 /* ProfileViewController.swift */; };
+		6A2000C61D72DC7C00011844 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000C51D72DC7C00011844 /* CreationViewController.swift */; };
+		6A2000C81D72DC8900011844 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2000C71D72DC8900011844 /* EventViewController.swift */; };
 		DCC84E0D0B07F23E2877C428 /* Pods_DownToStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		4B188AD01D728B770038809E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		4B188AD31D728E1D0038809E /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		6A2000BD1D72B82000011844 /* Radar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Radar.swift; sourceTree = "<group>"; };
+		6A2000BF1D72DC3D00011844 /* RadarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarViewController.swift; sourceTree = "<group>"; };
+		6A2000C11D72DC6200011844 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
+		6A2000C31D72DC6F00011844 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6A2000C51D72DC7C00011844 /* CreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		6A2000C71D72DC8900011844 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		9B5F74D6C143C7F8C24B98A4 /* Pods-DownToStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.debug.xcconfig"; sourceTree = "<group>"; };
 		A7245CE053B9C48A5938D243 /* Pods_DownToStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DownToStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C330CA9A8D8742274D982AA7 /* Pods-DownToStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DownToStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-DownToStudy/Pods-DownToStudy.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +166,11 @@
 			children = (
 				4B188A9D1D7229190038809E /* ViewController.swift */,
 				4B188ACD1D7272260038809E /* LoginViewController.swift */,
+				6A2000BF1D72DC3D00011844 /* RadarViewController.swift */,
+				6A2000C11D72DC6200011844 /* EventListViewController.swift */,
+				6A2000C31D72DC6F00011844 /* ProfileViewController.swift */,
+				6A2000C51D72DC7C00011844 /* CreationViewController.swift */,
+				6A2000C71D72DC8900011844 /* EventViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -342,16 +357,21 @@
 			files = (
 				4B188AC71D7260E90038809E /* PrimarySchool.swift in Sources */,
 				4B188A9E1D7229190038809E /* ViewController.swift in Sources */,
+				6A2000C81D72DC8900011844 /* EventViewController.swift in Sources */,
 				4B188AD11D728B770038809E /* UserDefaultsManager.swift in Sources */,
+				6A2000C01D72DC3D00011844 /* RadarViewController.swift in Sources */,
 				4B188ABA1D723BE10038809E /* School.swift in Sources */,
 				6A2000BE1D72B82000011844 /* Radar.swift in Sources */,
 				4B188ABC1D723C3F0038809E /* Class.swift in Sources */,
 				4B188AB31D72377B0038809E /* Event.swift in Sources */,
 				4B188AB61D723B8A0038809E /* Location.swift in Sources */,
+				6A2000C41D72DC6F00011844 /* ProfileViewController.swift in Sources */,
 				4B07C3781D72C32100F96689 /* DownToStudyService.swift in Sources */,
 				4B188AB81D723B980038809E /* User.swift in Sources */,
 				4B188AD41D728E1D0038809E /* Routes.swift in Sources */,
 				4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */,
+				6A2000C21D72DC6200011844 /* EventListViewController.swift in Sources */,
+				6A2000C61D72DC7C00011844 /* CreationViewController.swift in Sources */,
 				4B188AC01D7242820038809E /* StudyRoomService.swift in Sources */,
 				4B07C37E1D72CE7800F96689 /* Message.swift in Sources */,
 				4B188AC91D72644B0038809E /* DeviceUserResponse.swift in Sources */,

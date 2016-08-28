@@ -56,7 +56,7 @@ class Radar: UIView {
     
     func startRotation() -> Void {
         // Rotate slowly
-        let centerPoint = CGPointMake(bounds.size.width/2.0, bounds.size.height/2.0);
+        let centerPoint = CGPointMake(frame.size.width/2.0, frame.size.height/2.0);
         for imageView in [imageOne, imageTwo, imageThree, imageFour, imageFive] {
             imageView.rotateAround(centerPoint, duration: 60.0)
         }

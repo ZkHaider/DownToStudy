@@ -16,15 +16,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
-            loginViewController = lg
-            lg.delegate = self
-            lg.view.frame = view.frame
-            addChildViewController(lg)
-            view.addSubview((lg.view)!)
-        }
         
         // Hardcoded array of people if we're not authenticated
         var images = [String]()
@@ -38,11 +29,19 @@ class ViewController: UIViewController {
         images.append("https://luma-ef-prod.s3.amazonaws.com/user/264314/None/original.jpeg")
         radar.update(images)
         
+        if let lg = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") as? LoginViewController {
+            loginViewController = lg
+            lg.delegate = self
+            lg.view.frame = view.frame
+            addChildViewController(lg)
+            view.addSubview((lg.view)!)
+        }
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.sendSubviewToBack(radar)
         restartRotatingIfNeeded()
     }
 
