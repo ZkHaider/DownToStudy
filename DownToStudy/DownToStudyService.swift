@@ -68,7 +68,8 @@ extension DownToStudyService : TargetType {
         case .createEvent:
             return "Sample Data".dataUsingEncoding(NSUTF8StringEncoding)!
         case .getAvailableEvents:
-            return "Sample Data".dataUsingEncoding(NSUTF8StringEncoding)!
+            let path = NSBundle.mainBundle().pathForResource("available_events", ofType: "json")
+            return NSFileManager.defaultManager().contentsAtPath(path!)!
         case .getMessages:
             return "Sample Data".dataUsingEncoding(NSUTF8StringEncoding)!
         case .getPeopleNearby:
