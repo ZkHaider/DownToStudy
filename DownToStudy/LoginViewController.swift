@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var topLabel: UILabel!
     
-    weak var delegate: Routes?
+    weak var delegate: LoginViewControllerDelegate?
     
     override func viewDidLoad() {
         
@@ -28,6 +28,12 @@ class LoginViewController: UIViewController {
     func launchStudyRoom() {
         UIApplication.sharedApplication().openURL(NSURL (string: "srauth://authorize?client_id=4")!)
     }
+    
+}
+
+protocol LoginViewControllerDelegate : NSObjectProtocol {
+    
+    func loginDidAuthenticate(login: LoginViewController) -> Void
     
 }
 

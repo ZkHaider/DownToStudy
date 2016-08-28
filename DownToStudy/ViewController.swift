@@ -9,7 +9,7 @@
 import UIKit
 import Moya
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginViewControllerDelegate {
     
     let debugging = true
     
@@ -74,6 +74,12 @@ class ViewController: UIViewController {
     func scrollTo(page: Int, animated: Bool) {
         let xOffset = scrollView.bounds.size.width * CGFloat(page)
         scrollView.setContentOffset(CGPoint.init(x: xOffset, y: 0.0), animated: animated)
+    }
+    
+    // Login view controller delegate
+    
+    func loginDidAuthenticate(login: LoginViewController) -> Void {
+        // Remove the login controller 
     }
 }
 

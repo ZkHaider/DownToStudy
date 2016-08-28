@@ -43,7 +43,6 @@ class Radar: UIView {
     
     func update(imagePaths: [String]) -> Void {
         // Update the image views with the images to download from imagePaths
-        let session = NSURLSession.sharedSession()
         for (index, imageView) in [mainImage, imageOne, imageTwo, imageThree, imageFour, imageFive].enumerate() {
             if index > imagePaths.count {
                 continue
@@ -53,25 +52,11 @@ class Radar: UIView {
             imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.75, 0.75)
             
             let path = imagePaths[index]
-            let url = NSURL(string: path)
-            if let safeURL = url {
-                let task = session.dataTaskWithURL(safeURL) { (data, response, error) -> Void in
-                    
-                    if let safeData = data {
-                        let image = UIImage.init(data: safeData)
-                        
-                        // Pop them in
-                        dispatch_async(dispatch_get_main_queue()) {
-                            imageView.image = image
-                            UIView.animateWithDuration(0.3, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
-                                imageView.alpha = 1.0
-                                imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
-                                }, completion: nil)
-                        }
-                    }
-                    
-                }
-                task.resume()
+            imageView.downloadAndSet(path) {
+                UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: {
+                    imageView.alpha = 1.0
+                    imageView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
+                }, completion: nil)
             }
         }
     }
