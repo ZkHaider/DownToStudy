@@ -9,9 +9,19 @@
 import UIKit
 import Moya
 
-class ViewController: UIViewController, LoginViewControllerDelegate {
+protocol PageController : NSObjectProtocol {
+    func reload(animated: Bool) -> Void
+}
+
+extension UIViewController: PageController {
+    func reload(animated: Bool) -> Void {
+        
+    }
+}
+
+class ViewController : UIViewController, LoginViewControllerDelegate {
     
-    let debugging = true
+    let debugging = false
     
     var viewControllers = [UIViewController]()
     var loginViewController: LoginViewController?
@@ -76,10 +86,26 @@ class ViewController: UIViewController, LoginViewControllerDelegate {
         scrollView.setContentOffset(CGPoint.init(x: xOffset, y: 0.0), animated: animated)
     }
     
-    // Login view controller delegate
+    // Login view controller delegate methods
+    
+    func loginWillStartFetchingRemoteData(login: LoginViewController) -> Void {
+        // Show loading by making the radar go bananas
+        if let radarVC = viewControllers[1] as? RadarViewController {
+            radarVC.startLoadingAnimation()
+        }
+    }
     
     func loginDidAuthenticate(login: LoginViewController) -> Void {
-        // Remove the login controller 
+        
+        // Remove the login controller
+        login.willMoveToParentViewController(nil)
+        login.view.removeFromSuperview()
+        login.removeFromParentViewController()
+        
+        // Reload all controllers
+        for vc in viewControllers {
+            vc.reload(true)
+        }
     }
 }
 

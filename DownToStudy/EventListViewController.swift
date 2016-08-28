@@ -54,5 +54,9 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Do something if event selected
     }
-
+    
+    // Page Controller protocol
+    override func reload(animated: Bool) -> Void {
+        
+    }
 }

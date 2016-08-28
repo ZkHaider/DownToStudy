@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let uidValue = queryItems![1].value
     
         // Go ahead and launch the next view controller for showing the main view
-        if let rootViewController = window?.rootViewController as? ViewController {
+        if let rootViewController = window?.rootViewController as? Routes {
             rootViewController.processLogin(tokenValue!, uid: uidValue!)
         }
         

@@ -34,6 +34,10 @@ class RadarViewController: UIViewController {
         restartRotatingIfNeeded()
     }
     
+    func startLoadingAnimation() -> Void {
+        
+    }
+    
     func restartRotatingIfNeeded() -> Void {
         if !radar.isRotating() {
             rotateRadar()
@@ -42,6 +46,11 @@ class RadarViewController: UIViewController {
     
     func rotateRadar() -> Void {
         radar.startRotation()
+    }
+    
+    // Page Controller protocol
+    override func reload(animated: Bool) -> Void {
+        
     }
 
 }
