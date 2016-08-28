@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import Pulsator
 
 class Radar: UIView {
     
@@ -17,6 +18,27 @@ class Radar: UIView {
     @IBOutlet var imageThree: UIImageView!
     @IBOutlet var imageFour: UIImageView!
     @IBOutlet var imageFive: UIImageView!
+    var didLoadHalo = false
+    var halo: Pulsator?
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if !didLoadHalo {
+            didLoadHalo = true
+            
+            let pulsator = Pulsator()
+            pulsator.position = CGPoint.init(x: bounds.size.width/2.0, y: bounds.size.height/2.0)
+            layer.insertSublayer(pulsator, atIndex: 0)
+            pulsator.numPulse = 6
+            pulsator.animationDuration = 12
+            pulsator.pulseInterval = 0
+            pulsator.radius = 240.0
+            pulsator.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.65).CGColor
+            pulsator.start()
+            halo = pulsator
+        }
+    }
     
     
     func update(imagePaths: [String]) -> Void {
@@ -61,6 +83,21 @@ class Radar: UIView {
             imageView.rotateAround(centerPoint, duration: 60.0)
         }
         
+        bounceMainImage()
+        
+    }
+    
+    func bounceMainImage() -> Void {
+        
+        UIView.animateWithDuration(0.3, animations: { [unowned self] in
+            self.mainImage.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9)
+            }, completion: { (finished: Bool) -> Void in
+                UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.75, initialSpringVelocity: 0.25, options: .BeginFromCurrentState, animations: { [unowned self] in
+                    self.mainImage.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)
+                    }, completion: nil)
+            })
+        
+        performSelector(#selector(Radar.bounceMainImage), withObject: nil, afterDelay: 5)
     }
 }
 
