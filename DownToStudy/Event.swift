@@ -15,4 +15,17 @@ struct Event {
     let availableSpots: Int?
     let eventClass: Class?
     var students = [User]()
+    var joined: Bool?
+    
+    func hasJoined() -> Bool {
+        if let userId = UserDefaultsManager.getString("uid") {
+            for user in students {
+                if (user.uid == userId) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
 }

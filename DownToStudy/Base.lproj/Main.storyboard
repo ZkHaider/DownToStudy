@@ -1033,10 +1033,10 @@
                                                 <exclude reference="F7e-Ub-BTf"/>
                                                 <exclude reference="RLR-QH-YhS"/>
                                                 <exclude reference="gUX-6M-pJa"/>
-                                                <exclude reference="UcT-rn-cgf"/>
-                                                <exclude reference="ZOf-el-jpV"/>
                                                 <exclude reference="QBD-Ws-G0T"/>
                                                 <exclude reference="oQN-HS-5Tt"/>
+                                                <exclude reference="UcT-rn-cgf"/>
+                                                <exclude reference="ZOf-el-jpV"/>
                                                 <exclude reference="DiN-ze-Ljc"/>
                                                 <exclude reference="ga7-4Z-AYv"/>
                                             </mask>
@@ -1056,10 +1056,10 @@
                                                 <include reference="F7e-Ub-BTf"/>
                                                 <include reference="RLR-QH-YhS"/>
                                                 <include reference="gUX-6M-pJa"/>
-                                                <include reference="UcT-rn-cgf"/>
-                                                <include reference="ZOf-el-jpV"/>
                                                 <include reference="QBD-Ws-G0T"/>
                                                 <include reference="oQN-HS-5Tt"/>
+                                                <include reference="UcT-rn-cgf"/>
+                                                <include reference="ZOf-el-jpV"/>
                                                 <include reference="DiN-ze-Ljc"/>
                                                 <include reference="ga7-4Z-AYv"/>
                                             </mask>
@@ -1088,18 +1088,19 @@
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="vCZ-T6-9i9"/>
                                                 <exclude reference="Mkb-GF-OVt"/>
+                                                <exclude reference="vCZ-T6-9i9"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
-                                                <include reference="vCZ-T6-9i9"/>
                                                 <include reference="Mkb-GF-OVt"/>
+                                                <include reference="vCZ-T6-9i9"/>
                                             </mask>
                                         </variation>
                                         <connections>
                                             <action selector="btnStudyPressed" destination="2bK-wI-d6V" eventType="touchUpInside" id="mDg-hU-ziB"/>
+                                            <action selector="didPressJoin:" destination="W46-1o-cm4" eventType="touchUpInside" id="VCQ-as-onI"/>
                                             <action selector="tappedLoginButton:" destination="PKc-jk-aMw" eventType="touchUpInside" id="h7J-G0-2dK"/>
                                         </connections>
                                     </button>
@@ -1232,6 +1233,7 @@
                     <connections>
                         <outlet property="avatarsContainer" destination="Y8k-Mq-nJl" id="C7v-Gy-U6H"/>
                         <outlet property="infoContainer" destination="w90-yW-WqV" id="ph9-mc-XOc"/>
+                        <outlet property="joinButton" destination="wRW-Gv-CLt" id="yLp-87-I1b"/>
                         <outlet property="locationLabel" destination="4BZ-e5-Dca" id="LjE-lU-sTA"/>
                         <outlet property="spotsLabel" destination="43N-sC-P41" id="Ux5-dZ-i4t"/>
                         <outlet property="textFieldContainer" destination="PQe-lZ-zuo" id="gbw-4B-haW"/>

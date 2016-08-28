@@ -55,7 +55,7 @@ class CreationViewController: UIViewController {
         // Create event and then tell the delegate
         let course = Class(id: "1", name: "BIO 100: Introduction to Biology", school: "UC Santa Cruz")
         let student = User(uid: director.userID(), name: "Emerson Malca", school: nil, classes: nil)
-        let event = Event(id: "1", name: "BIO 100 Study Group", locationName: "Peet's coffee @ the library", availableSpots: 4, eventClass: course, students: [student])
+        let event = Event(id: "1", name: "BIO 100 Study Group", locationName: "Peet's coffee @ the library", availableSpots: 4, eventClass: course, students: [student], joined: false)
         delegate?.creationDidFinish(self, event: event);
     }
 

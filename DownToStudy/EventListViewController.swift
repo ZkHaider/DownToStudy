@@ -32,21 +32,21 @@ class EventListViewController: UIViewController, UITableViewDelegate, UITableVie
         for idx in Array(0...randomIndex) {
             students.append(demoStudents[idx])
         }
-        events.append(Event(id: "1", name: "BIO 100", locationName: "Peet's in the library", availableSpots: 2, eventClass: bio, students: students))
+        events.append(Event(id: "1", name: "BIO 100", locationName: "Peet's in the library", availableSpots: 2, eventClass: bio, students: students, joined: false))
         randomIndex = Int(arc4random()) % demoStudents.count
         randomIndex = randomIndex > 0 ? randomIndex : 1
         students = [User]()
         for idx in Array(0...randomIndex) {
             students.append(demoStudents[idx])
         }
-        events.append(Event(id: "2", name: "MATH 110", locationName: "Basement study room", availableSpots: 1, eventClass: math, students: students))
+        events.append(Event(id: "2", name: "MATH 110", locationName: "Basement study room", availableSpots: 1, eventClass: math, students: students, joined: false))
         randomIndex = Int(arc4random()) % demoStudents.count
         randomIndex = randomIndex > 0 ? randomIndex : 1
         students = [User]()
         for idx in Array(0...randomIndex) {
             students.append(demoStudents[idx])
         }
-        events.append(Event(id: "3", name: "CS 101", locationName: "Tutoring room", availableSpots: 3, eventClass: csc, students: students))
+        events.append(Event(id: "3", name: "CS 101", locationName: "Tutoring room", availableSpots: 3, eventClass: csc, students: students, joined: false))
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

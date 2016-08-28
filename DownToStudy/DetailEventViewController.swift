@@ -10,6 +10,7 @@ import UIKit
 
 class DetailEventViewController: UIViewController {
     
+    @IBOutlet weak var joinButton: UIButton!
     @IBOutlet weak var textFieldContainer: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleLabelTwo: UILabel!
@@ -93,6 +94,13 @@ class DetailEventViewController: UIViewController {
                 sv.alpha = 0.0
             }
         }
+        
+        let hasJoined = event.hasJoined()
+        if (hasJoined) {
+            UIView.animateWithDuration(0.2, animations: {
+                self.joinButton.alpha = 0
+            })
+        }
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -101,6 +109,12 @@ class DetailEventViewController: UIViewController {
     
     @IBAction func btnClosePressed() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func didPressJoin(sender: UIButton) {
+        UIView.animateWithDuration(0.8, animations: {
+            self.joinButton.alpha = 0
+        })
     }
 
 }
