@@ -15,6 +15,11 @@ class DetailEventViewController: UIViewController {
     @IBOutlet weak var titleLabelTwo: UILabel!
     @IBOutlet weak var infoContainer: UIView!
     @IBOutlet weak var avatarsContainer: UIView!
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var spotsLabel: UILabel!
+    
     var event: Event!
     
     @IBOutlet weak var userPicture1: UIImageView! {
@@ -59,6 +64,21 @@ class DetailEventViewController: UIViewController {
         
         titleLabel.text = event.eventClass?.name
         titleLabelTwo.text = event.eventClass?.name
+        
+        locationLabel.text = "Meeting @ \(event.locationName!)"
+        if let spots = event.availableSpots {
+            switch spots {
+            case 0:
+                spotsLabel.text = "No spots available"
+                break
+            case 1:
+                spotsLabel.text = "1 spot available"
+                break
+            default:
+                spotsLabel.text = "\(spots) spots available"
+                break
+            }
+        }
         
         let userCount = event.students.count
         for (index, sv) in [userPicture1, userPicture2, userPicture3, userPicture4, userPicture5].enumerate() {
