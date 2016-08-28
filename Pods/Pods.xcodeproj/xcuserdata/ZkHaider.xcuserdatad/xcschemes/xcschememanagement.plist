@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pulsator.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Result.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72A9492BD1CC03080CD2FA31AEF66403</key>
+		<key>3F619C466BBF0019EFAF44BADE98951B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76C62B29736D0FC991AD82C8E45C0E66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CF3454A6C79348BFBC7E6EBCE194403E</key>
+		<key>92DDA294668131B89B28190B27132F5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
