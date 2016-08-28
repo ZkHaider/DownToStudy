@@ -19,7 +19,7 @@ extension UIViewController: PageController {
     }
 }
 
-class ViewController : UIViewController, LoginViewControllerDelegate {
+class ViewController : UIViewController, LoginViewControllerDelegate, UITabBarDelegate {
     
     let debugging = false
     
@@ -129,6 +129,13 @@ class ViewController : UIViewController, LoginViewControllerDelegate {
         // Reload all controllers
         for vc in viewControllers {
             vc.reload(true)
+        }
+    }
+    
+    // Tab Bar delegate
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        if let index = tabBar.items?.indexOf(item) {
+            scrollTo(Int(index), animated: true)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadarViewController: UIViewController {
+class RadarViewController: UIViewController, CreationViewControllerDelegate {
     
     @IBOutlet var radar: Radar!
     @IBOutlet var titleLabel: UILabel!
@@ -41,6 +41,15 @@ class RadarViewController: UIViewController {
     
     func rotateRadar() -> Void {
         radar.startRotation()
+    }
+    
+    @IBAction func btnCreatePressed() {
+        
+        if let creation = storyboard?.instantiateViewControllerWithIdentifier("creationViewController") as? CreationViewController {
+            creation.delegate = self
+            presentViewController(creation, animated: true, completion: nil)
+        }
+        
     }
     
     // Page Controller protocol
@@ -100,6 +109,16 @@ class RadarViewController: UIViewController {
         images.append("https://luma-ef-prod.s3.amazonaws.com/user/917808/None/original.jpeg")
         images.append("https://luma-ef-prod.s3.amazonaws.com/user/264314/None/original.jpeg")
         return images
+    }
+    
+    // Creation view controller
+    
+    func creationDidCancel(creationController: CreationViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func creation(creationController: CreationViewController, didFinishWithEvent: Event) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
