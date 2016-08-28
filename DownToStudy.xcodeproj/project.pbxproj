@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B07C3781D72C32100F96689 /* DownToStudyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C3771D72C32100F96689 /* DownToStudyService.swift */; };
+		4B07C37C1D72C93100F96689 /* nearby_people.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B07C37B1D72C93100F96689 /* nearby_people.json */; };
+		4B07C37E1D72CE7800F96689 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B07C37D1D72CE7800F96689 /* Message.swift */; };
+		4B07C3801D72D11400F96689 /* available_events.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B07C37F1D72D11400F96689 /* available_events.json */; };
 		4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188A9B1D7229190038809E /* AppDelegate.swift */; };
 		4B188A9E1D7229190038809E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B188A9D1D7229190038809E /* ViewController.swift */; };
 		4B188AA11D7229190038809E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B188A9F1D7229190038809E /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B07C3771D72C32100F96689 /* DownToStudyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownToStudyService.swift; sourceTree = "<group>"; };
+		4B07C37B1D72C93100F96689 /* nearby_people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nearby_people.json; sourceTree = "<group>"; };
+		4B07C37D1D72CE7800F96689 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4B07C37F1D72D11400F96689 /* available_events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = available_events.json; sourceTree = "<group>"; };
 		4B188A981D7229190038809E /* DownToStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DownToStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B188A9B1D7229190038809E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B188A9D1D7229190038809E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +81,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4B07C37A1D72C8FF00F96689 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B07C37B1D72C93100F96689 /* nearby_people.json */,
+				4B07C37F1D72D11400F96689 /* available_events.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		4B188A8F1D7229190038809E = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +111,7 @@
 		4B188A9A1D7229190038809E /* DownToStudy */ = {
 			isa = PBXGroup;
 			children = (
+				4B07C37A1D72C8FF00F96689 /* Resources */,
 				4B188ACF1D728B5A0038809E /* Tools */,
 				4B188AB41D723A2E0038809E /* Networking */,
 				4B188AAD1D7237070038809E /* Models */,
@@ -117,6 +135,7 @@
 				4B188AB91D723BE10038809E /* School.swift */,
 				4B188ABB1D723C3F0038809E /* Class.swift */,
 				4B188AC61D7260E90038809E /* PrimarySchool.swift */,
+				4B07C37D1D72CE7800F96689 /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -160,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4B188ABF1D7242820038809E /* StudyRoomService.swift */,
+				4B07C3771D72C32100F96689 /* DownToStudyService.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -257,9 +277,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B07C3801D72D11400F96689 /* available_events.json in Resources */,
 				4B188AA61D7229190038809E /* LaunchScreen.storyboard in Resources */,
 				4B188AA31D7229190038809E /* Assets.xcassets in Resources */,
 				4B188AA11D7229190038809E /* Main.storyboard in Resources */,
+				4B07C37C1D72C93100F96689 /* nearby_people.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,10 +348,12 @@
 				4B188ABC1D723C3F0038809E /* Class.swift in Sources */,
 				4B188AB31D72377B0038809E /* Event.swift in Sources */,
 				4B188AB61D723B8A0038809E /* Location.swift in Sources */,
+				4B07C3781D72C32100F96689 /* DownToStudyService.swift in Sources */,
 				4B188AB81D723B980038809E /* User.swift in Sources */,
 				4B188AD41D728E1D0038809E /* Routes.swift in Sources */,
 				4B188A9C1D7229190038809E /* AppDelegate.swift in Sources */,
 				4B188AC01D7242820038809E /* StudyRoomService.swift in Sources */,
+				4B07C37E1D72CE7800F96689 /* Message.swift in Sources */,
 				4B188AC91D72644B0038809E /* DeviceUserResponse.swift in Sources */,
 				4B188ACE1D7272260038809E /* LoginViewController.swift in Sources */,
 			);

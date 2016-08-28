@@ -39,11 +39,42 @@ extension LoginViewController : Routes {
         UserDefaultsManager.setString("uid", value: uid)
 
         StudyRoomProvider.request(.accountInfo()) { result in
-            print(result)
+            switch result {
+            case let .Success(response):
+                do {
+                    if let json = try response.mapJSON() as? NSDictionary {
+                        UserDefaultsManager.setObject("info", value: json)
+                    } else {
+                        print("Unable to convert")
+                    }
+                } catch {
+                    print("Unable to convert")
+                }
+                break
+            case let .Failure(error):
+                print(error)
+                break
+            }
         }
         
         StudyRoomProvider.request(.getCourses()) { result in
-            print(result)
+            switch result {
+            case let .Success(response):
+                do {
+                    if let json = try response.mapJSON() as? NSDictionary {
+                        UserDefaultsManager.setObject("courses", value: json)
+                    } else {
+                        print("Unable to convert")
+                    }
+                } catch {
+                    print("Unable to convert")
+                }
+
+                break
+            case let .Failure(error):
+                print(error)
+                break
+            }
         }
     }
 }
