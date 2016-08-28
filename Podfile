@@ -10,5 +10,7 @@ target 'DownToStudy' do
   pod 'SwiftyJSON'
   pod 'Moya-ObjectMapper'
   pod ‘Pulsator’
+  pod 'Chatto'
+  pod 'ChattoAdditions'
 
 end
