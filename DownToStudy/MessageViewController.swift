@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Chatto
 
-class MessageViewController: UIViewController {
+class MessageViewController: BaseChatViewController {
+    
+    var fakeMessageSender: Fak
 
     override func viewDidLoad() {
         super.viewDidLoad()
