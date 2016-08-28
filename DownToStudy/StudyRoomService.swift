@@ -37,7 +37,7 @@ private let endpointClosure = { (target: StudyRoomService) -> Endpoint<StudyRoom
 }
 
 // Provider
-public let StudyRoomProvider = MoyaProvider<StudyRoomService>(endpointClosure: endpointClosure, plugins: [NetworkLoggerPlugin(verbose: true)])
+public let StudyRoomProvider = MoyaProvider<StudyRoomService>(endpointClosure: endpointClosure)
 
 public enum StudyRoomService {
     case accountInfo()
