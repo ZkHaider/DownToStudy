@@ -1,14 +1,14 @@
 //
-//  CreationViewController.swift
+//  MessageViewController.swift
 //  DownToStudy
 //
-//  Created by emersonmalca on 8/28/16.
+//  Created by Haider Khan on 8/28/16.
 //  Copyright © 2016 ZkHaider. All rights reserved.
 //
 
 import UIKit
 
-class CreationViewController: UIViewController {
+class MessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
